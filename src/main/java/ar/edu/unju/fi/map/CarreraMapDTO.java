@@ -1,5 +1,6 @@
 package ar.edu.unju.fi.map;
 
+import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
@@ -14,5 +15,11 @@ public interface CarreraMapDTO {
 	@Mapping(source = "apellido",target = "apellido")
 	@Mapping(source = "email",target = "email")
 	DocenteDTO convertirDocenteADocenteDTO(Docente d);
+	
+	@Mapping(target = "legajo",ignore = true)
+	
+	@InheritInverseConfiguration
+	Docente convertirDocenteDTOADocente(DocenteDTO ddto);
+	
 	
 }
