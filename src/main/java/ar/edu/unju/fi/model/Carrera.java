@@ -11,7 +11,8 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @RequiredArgsConstructor
 @Entity
@@ -24,6 +25,6 @@ public class Carrera {
 	private String nombre;
 	@NonNull
 	private Integer cantidadAnios;
-	@NonNull
+
 	private boolean estado;
 }

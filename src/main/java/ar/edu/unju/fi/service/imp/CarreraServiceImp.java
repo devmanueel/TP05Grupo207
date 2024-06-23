@@ -51,6 +51,5 @@ public class CarreraServiceImp implements CarreraService {
 	public Carrera buscaCarrera(String codigo) {
 		// TODO Auto-generated method stub
 		return carreraRepository.findById(codigo).orElse(null);
-		;
 	}
 }
