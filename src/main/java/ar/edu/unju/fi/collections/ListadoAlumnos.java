@@ -9,13 +9,7 @@ public class ListadoAlumnos {
     
     // Método para listar alumnos
     public static List<Alumno> listarAlumnos() {
-        List<Alumno> alumnosActivos = new ArrayList<>();
-        for (Alumno alumno : alumnos) {
-            if (alumno.getEstado()) {
-                alumnosActivos.add(alumno);
-            }
-        }
-        return alumnosActivos;
+        return alumnos;
     }
     
     // Método para buscar un alumno por DNI
@@ -48,12 +42,6 @@ public class ListadoAlumnos {
     
     // Método para eliminar un alumno
     public static void eliminarAlumno(String dni) {
-        for (int i = 0; i < alumnos.size(); i++) {
-            Alumno alumno = alumnos.get(i);
-            if (alumno.getDni().equals(dni)) {
-                alumno.setEstado(false);
-                break;
-            }
-        }
+        alumnos.removeIf(alumno -> alumno.getDni().equals(dni));
     }
 }

@@ -1,21 +1,15 @@
-package ar.edu.unju.fi.model;
+package ar.edu.unju.fi.DTO;
 
 import java.util.Date;
 
 import org.springframework.stereotype.Component;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 @NoArgsConstructor
-@RequiredArgsConstructor
-@Entity
 @Component
-public class Alumno {
-	
-	@Id
+public class AlumnoDTO {
+
     private String dni;
 	
     private String nombre;
@@ -80,8 +74,6 @@ public class Alumno {
 	public void setEstado(Boolean estado) {
 		this.estado = estado;
 	}
-    
-    
-    
+       
 }
 
