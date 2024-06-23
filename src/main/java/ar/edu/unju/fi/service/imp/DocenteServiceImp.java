@@ -1,40 +1,59 @@
-package ar.edu.unju.fi.service.imp;
+ package ar.edu.unju.fi.service.imp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import ar.edu.unju.fi.DTO.DocenteDTO;
+import ar.edu.unju.fi.collections.ListadoDocentes;
+import ar.edu.unju.fi.map.DocenteMapDTO;
 import ar.edu.unju.fi.model.Docente;
 import ar.edu.unju.fi.repository.DocenteRepository;
 import ar.edu.unju.fi.service.DocenteService;
 
-@Service
+@Service("docenteServiceImp")
 public class DocenteServiceImp implements DocenteService {
 
+	//@Autowired DocenteMapDTO docenteMapDTO;
+	@Autowired DocenteMapDTO docenteMapDTO;
+	
 	@Autowired
 	DocenteRepository docenteRepository;
 	
+	
 	@Override
-	public void guardarDocente(Docente docente) {
+	public List<DocenteDTO> MostrarDocente() {
 		// TODO Auto-generated method stub
-		//INsertar try y chat
-		//docente.setEstado(true);
-		docenteRepository.save(docente);
+		//List<DocenteDTO> docenteDTOs=docenteMapDTO.toDocenteDTOList(ListadoDocentes.listarDocentes());
+		List<DocenteDTO>docenteDTOs=docenteMapDTO.toDocenteDTOList(docenteRepository.findDocenteByEstado(true));
+		return docenteDTOs;
 		
-	}
- 
-	@Override
-	public List<Docente> MostrarDocente() {
-		// TODO Auto-generated method stub
-		//return docenteRepository.findAll()	;		
-		return docenteRepository.findDocenteByEstado(true);
+		//return docenteDTOs;
 	}
 
 	@Override
-	public void borrarDocente(String legajo) {
+	public DocenteDTO findByLegajo(String legajo) {
 		// TODO Auto-generated method stub
-		System.out.println("este es el codigo: "+legajo);
+		DocenteDTO docenteDTO = docenteMapDTO.toDocenteDTO(ListadoDocentes.buscarDocentePorLegajo(legajo));
+		return docenteDTO;
+	}
+
+	@Override
+	public boolean save(DocenteDTO docenteDTO) {
+		// TODO Auto-generated method stub0
+		boolean respuesta = ListadoDocentes.agregarDocente(docenteMapDTO.toDocente(docenteDTO));
+		Docente docente = docenteMapDTO.toDocente(docenteDTO);
+        docenteRepository.save(docente);
+		
+		//System.out.println(docenteDTO);
+		
+		return respuesta;
+	}
+
+	@Override
+	public void deleteByLegajo(String legajo) {
 		// TODO Auto-generated method stub
+		//ListadoDocentes.eliminarDocente(legajo);
+		
 		List<Docente> todosLosDocentes = docenteRepository.findAll();
 		for (int i = 0; i < todosLosDocentes.size(); i++) {
 		      Docente docente = todosLosDocentes.get(i);
@@ -47,20 +66,24 @@ public class DocenteServiceImp implements DocenteService {
 	}
 
 	@Override
-	public void modificarDocente(Docente docente) {
+	public void edit(DocenteDTO docenteDTO) {
 		// TODO Auto-generated method stub
-		 docenteRepository.save(docente);
+		ListadoDocentes.modificarDocente(docenteMapDTO.toDocente(docenteDTO));
+		
+		
 	}
 
 	@Override
 	public Docente buscaDocente(String legajo) {
-		// TODO Auto-generated method stub
-		 return docenteRepository.findById(legajo).orElse(null);
+		return docenteRepository.findById(legajo).orElse(null);
 	}
 
 
 
-	
 
+	
+	
+	
+	
 	
 }
