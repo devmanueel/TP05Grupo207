@@ -19,12 +19,13 @@ public class CarreraServiceImp implements CarreraService {
 	public void guardarCarrera(Carrera carrera) {
 		// TODO Auto-generated method stub
 		carreraRepository.save(carrera);
+		System.out.println("Carrera ejecutada en metodo GUARDAR CARRERA" + carrera.getCodigo());
 	}
 
 	@Override
 	public List<Carrera> MostrarCarrera() {
 		// TODO Auto-generated method stub
-		return carreraRepository.findCarreraByCodigo(true);
+		return carreraRepository.findCarreraByEstado(true);
 	}
 
 	@Override

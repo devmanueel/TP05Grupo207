@@ -12,8 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 import ar.edu.unju.fi.model.Carrera;
 import ar.edu.unju.fi.service.CarreraService;
 
-
-
 @Controller
 @RequestMapping("/carrera")
 public class CarreraController {
@@ -39,9 +37,10 @@ public class CarreraController {
     }
     
     @PostMapping("/guardar")
-    public String guardarCarrera(@ModelAttribute("carrera") Carrera carrera) {
+    public String guardarCarrera(@ModelAttribute("nuevaCarrera") Carrera carrera) {
         cs.guardarCarrera(carrera);
-        return "redirect:/docente/listadoDocente";
+        //System.out.println("Carrera en el metodo Guardar" + carrera.getCodigo());
+        return "redirect:/carrera/listado";
     }
     
     @GetMapping("/modificarCarrera/{codigo}")
