@@ -31,8 +31,6 @@
 	      <th scope="col">Curso</th>
 	      <th scope="col">Cantidad de Horas</th>
 	      <th scope="col">Modalidad</th>
-	      <th scope="col">Docente</th>
-	      <th scope="col">Carrera</th>
 	      <th scope="col">Edición</th>
 	    </tr>
 	  </thead>
@@ -43,8 +41,7 @@
 	      <td data-th-text="${m.curso}"></td>
 	      <td data-th-text="${m.cantidadHoras}"></td>
 	      <td data-th-text="${m.modalidad}"></td>
-	      <td data-th-text="${m.docente.nombre}"></td>
-	      <td data-th-text="${m.carrera.nombre}"></td>
+	     
 	      	<td>
 				<a data-th-href="@{/materia/borrarMateria/}+${m.codigo}" class="btn btn-danger" role="button">Borrar</a>					
 				<a data-th-href="@{/materia/modificarMateria/}+${m.codigo}" class="btn btn-warning" role="button">Modificar</a>
