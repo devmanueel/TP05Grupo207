@@ -52,11 +52,17 @@
                     <option data-th-value="logodocente.png">Profe Uname</option>
                 </select>
                
-            </div>            
-            
-      
-            
-            <button type="submit" class="btn btn-primary text-center" data-th-value="${edicion}?'Modificar':'Guardar'">Guardar</button>
+            </div>
+
+			<div  class="row mb-3 justify-content-center col-3">
+				<label for="cantidad" class="form-label">ESTADO: </label> <select
+					class="form-select " data-th-field="*{estado}" required="required">
+					<option data-th-value="true" selected>Activo</option>
+					<option data-th-value="false">Inactivo</option>
+				</select>
+			</div>
+
+			<button type="submit" class="btn btn-primary text-center" data-th-value="${edicion}?'Modificar':'Guardar'">Guardar</button>
         </form>
     </div>    
 	<footer data-th-replace="~{fragments/header::footer}" class="container-fluid"></footer>
