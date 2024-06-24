@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<link rel="stylesheet" data-th-href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/css/styles.css"></link>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+	<header data-th-replace="~{fragments/header::navbar}"></header>
+		
+		<div class="container">
+		<h2>Alumnos:</h2>
+		<div class="row">
+			
+			<div class="row mb-5">
+		    <div class="d-grid grap-2 d-md-felx justify-content-md-end mb-2">
+			      <a class="btn btn-primary" data-th-href="@{/alumno/nuevo}" role="button">Agregar Alumno</a>
+			    </div>
+			   
+			</div>
+			
+			
+			<div class="card" style="width: 22rem;" data-th-each="a: ${alumno}">
+			  <img data-th-src="@{'/avatar/'+${a.foto}}" class="card-img-top" alt="..."style="width: 300px; height: 240px;" >
+			  
+			  <div class="card-body">
+			    <h5 class="card-title" data-th-text="${a.nombre}+' '+${a.apellido}"></h5>
+			    <div>
+                    <p class="d-inline me-2">DNI:</p><p class="card-text d-inline" data-th-text="${a.dni}"></p>
+                </div>
+			    <div>
+                    <p class="d-inline me-2">LU:</p><p class="card-text d-inline" data-th-text="${a.LU}"></p>
+                </div>
+                <div>
+                    <p class="d-inline me-2">Fecha de Nacimiento:</p><p class="card-text d-inline" data-th-text="${a.fechaNacimiento}"></p>
+                </div>
+                <div>
+                    <p class="d-inline me-2">Mail:</p><p class="card-text d-inline" data-th-text="${a.email}"></p>
+                </div>
+                <div>
+                    <p class="d-inline me-2">Telefono:</p><p class="card-text d-inline" data-th-text="${a.telefono}"></p>
+                </div>
+				<!-- Botones Card-->
+			    <a data-th-href="@{/alumno/borrar/}+${a.LU}" class="btn btn-danger" role="button">Borrar</a>					
+				<a data-th-href="@{/alumno/modificar/}+${a.LU}" class="btn btn-warning" role="button">Modificar</a>
+			  </div>	
+		  </div>
+		</div>	
+	
+	</div>
+		
+	<footer data-th-replace="~{fragments/header::footer}" class="container-fluid"></footer>
+	
+	<script data-th-src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
