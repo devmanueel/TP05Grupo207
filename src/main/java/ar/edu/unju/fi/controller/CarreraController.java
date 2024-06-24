@@ -29,7 +29,7 @@ public class CarreraController {
 	@GetMapping("/nuevo")
 	public String getVistaNuevaCarrera(Model model) {
 		boolean edicion = false;
-		model.addAttribute("nuevoDocente",nuevoCarreraDTO);
+		model.addAttribute("nuevaCarrera",nuevoCarreraDTO);
 		model.addAttribute("edicion",edicion);
 		return "formCarrera";
 	}
@@ -37,10 +37,10 @@ public class CarreraController {
 	@PostMapping("/guardar")
 	public String guardarCarrrera(@ModelAttribute("carrera") CarreraDTO carreraDTO) {
 		carreraService.save(carreraDTO);
-		return "redirect:/carrera/listaDeCarrera";
+		return "redirect:/carrera/listado";
 	}
 	
-	@GetMapping("/modificar/{codigo}")
+	@GetMapping("/modificarCarrera/{codigo}")
 	public String getModificarCarreraPage(Model model, @PathVariable(value = "codigo") String codigo) {
 		CarreraDTO carreraEncontradaDTO = carreraService.findByCodigo(codigo);
 		boolean edicion = true;
@@ -52,13 +52,13 @@ public class CarreraController {
 	@PostMapping("/modificar")
 	public String modificarCarrera(@ModelAttribute("nuevaCarrera") CarreraDTO carreraDTO) {
 		carreraService.save(carreraDTO);
-		return "redirect:/carrera/listadoCarrera";
+		return "redirect:/carrera/listado";
 	}
 	
-	@GetMapping("/borrar/{codigo}")
+	@GetMapping("/borrarCarrera/{codigo}")
 	public String eliminarCarrera(@PathVariable(value = "codigo") String codigo) {
 		carreraService.deleteByCodigo(codigo);
-		return "redirect:/carrera/listadoCarrera";
+		return "redirect:/carrera/listado";
 	}
 	
 //NO ELIMINAR ESTA PARTE
@@ -111,6 +111,5 @@ public class CarreraController {
 //    	cs.borrarCarrera(codigo);
 //    	return "redirect:/carrera/listado";
 //    }
-//   
 //    
 }
