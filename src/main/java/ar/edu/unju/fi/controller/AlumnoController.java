@@ -1,13 +1,16 @@
 package ar.edu.unju.fi.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import ar.edu.unju.fi.DTO.AlumnoDTO;
 import ar.edu.unju.fi.service.AlumnoService;
@@ -92,5 +95,6 @@ public class AlumnoController {
             return "redirect:/alumno/listadoAlumno?error=true";
         }
         return "redirect:/alumno/listadoAlumno";
+
     }
 }

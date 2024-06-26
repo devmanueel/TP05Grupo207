@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title data-th-text="${titulo}"></title>
+<link rel="stylesheet" href="../css/styles.css"></link>
+<link rel="stylesheet" data-th-href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
+
+</head>
+<body>
+
+<!-- NAVBAR-->
+<header>
+
+	<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body nav-size " data-bs-theme="dark"
+		data-th-fragment="navbar">
+	<div class="container-fluid div-c">
+		<a class="navbar-brand col-2 p-3 mb-2 nav-bar-logoN collapse navbar-collapse"  id="navbarSupportedContent"
+			href="#"> 
+			<img src="/imagenes/logo-fi-unju-institucional-285x159.png" class="rounded float-start logo-img log-img" alt="Logo UNJU">
+			<span class="brand-info">
+				<span class="brand-name">Facultad de Ingeniería<br>Universidad Nacional de Jujuy</span>
+				<span class="eslogan">Flamman Tva Hoc Foco Accende</span>
+			</span>		
+		</a>
+		<button class="navbar-toggler" type="button"
+			data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse"  id="navbarSupportedContent">
+			<ul class="navbar-nav d-flex justify-content-center align-items-center custom-gap">
+				<li class="nav-item size-nav">
+					<a class="nav-link active" aria-current="page" href="/principal/home#inicio">Inicio</a>
+				</li>
+				<li class="nav-item size-nav">
+					<a class="nav-link active" aria-current="page" href="/principal/home#acerca-de">Acerca de</a>
+				</li>
+				<li class="nav-item size-nav">
+					<a class="nav-link active" aria-current="page" href="/principal/home#noticias">Noticias</a>
+				</li>
+				<li class="nav-item size-nav">
+					<a class="nav-link active" aria-current="page" href="/principal/home#carreras">Carreras</a>
+				</li>
+				<li class="nav-item size-nav">
+					<a class="nav-link active" aria-current="page" href="/principal/home#contacto">Contacto</a>
+				</li>
+				
+				<li class="nav-item dropdown size-nav">
+		          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+		            Administracion
+		          </a>
+		          <ul class="dropdown-menu">
+		            <li><a class="dropdown-item size-nav" href="/carrera/listado">Gestionar Carrera</a></li>
+		            <li><a class="dropdown-item size-nav" href="/materia/listado">Gestionar Materia</a></li>
+		            <li><a class="dropdown-item size-nav" href="/docente/listadoDocente">Gestionar Docente</a></li>
+		            <li><a class="dropdown-item size-nav" href="/alumno/listadoAlumno">Gestionar Alumno</a></li>
+		          </ul>
+		        </li>
+				
+			</ul>
+			<form class="d-flex ms-auto" role="search">
+				<div class="input-group input-group-sm mb-3">
+					<input class="form-control me-1" type="search" placeholder="Buscar" aria-label="Search">
+				</div>						
+				<button class="btn btn-outline-success size-nav btn-xs" type="submit" style="--bs-btn-padding-y: 0.25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Buscar</button>
+			</form>
+		</div>
+	</div>
+</nav>
+</header>
+<!-- NAVBAR-->	
+	
+<!-- FOTTER-->
+
+	<div class="footer mt-auto py-3" id="contacto" data-th-fragment="footer">
+        <div class="container fuente">
+            <div class="row">
+                <div class="col-md-3" >
+                    <h5>SOBRE EL DESARROLLADOR</h5>
+                    <p>Desarrollado por Manuel Mendoza, un estudiante de Analista Desarrollador Universitario apasionado por el diseño web.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>AVISO LEGAL</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.fi.unju.edu.ar/terminos-y-condiciones" target="_black">Términos y Condiciones</a></li>
+                        <li><a href="https://www.fi.unju.edu.ar/condiciones-de-uso-correo-electronico" target="_black">Condiciones de uso del Correo Electrónico</a></li>
+                       
+                    </ul>
+                </div>
+               
+                <div class="col-md-3 offset-md-3">
+                    <h5>FACULTAD DE INGENIERÍA - UNJu</h5>
+                    <ul class="list-unstyled ">
+                        <li><i class="bi bi-geo-alt-fill icon-facultad"></i> <p>Ítalo Palanca Nº 10 San Salvador de Jujuy- Jujuy - Argentina </p></li>
+                        <li><i class="bi bi-envelope-fill icon-facultad"></i> <p>info@fi.unju.edu.ar</p></li>
+                        <li><i class="bi bi-telephone-fill icon-facultad"></i><p> +92 31621119445</p></li> 
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-4 ">
+                <p>Copyright ©2024 Mendoza Manuel Santiago LU:4236 | Todos los derechos Reservados <a href="https://www.fi.unju.edu.ar" target="_black">FI-UNJU</a></p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/fiunju/" target="_black"><i class="bi bi-facebook" ></i></a>
+                    <a href="https://www.instagram.com/fiunju/" target="_black"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.fi.unju.edu.ar" target="_black"><i class="bi bi-google"></i></a>
+                    <a href="https://www.linkedin.com/school/facultad-de-ingenieria-unju/posts/?feedView=all" target="_black"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://www.youtube.com/channel/UCgS9XJlKKSYI1oJ4lIOo77A" target="_black"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- FOTTER-->
+<script data-th-src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

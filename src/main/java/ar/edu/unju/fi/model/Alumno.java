@@ -9,14 +9,15 @@ import lombok.Data;
 @Component
 @Data
 @Entity
-public class Alumno {
+public class Alumno {	
 	@Id
-	private String dni;
+    private String dni;
+
 	
     private String nombre;
     private String apellido;
     private String email;
-    private String telefono;
+    private String telefono;  
     
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private LocalDate fechaNacimiento;
@@ -25,3 +26,4 @@ public class Alumno {
     private String foto;
     private Boolean estado;
 }
+

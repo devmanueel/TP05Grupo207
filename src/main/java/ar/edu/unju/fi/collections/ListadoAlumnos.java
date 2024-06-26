@@ -5,6 +5,7 @@ import java.util.List;
 import ar.edu.unju.fi.model.Alumno;
 
 public class ListadoAlumnos {
+
     public static List<Alumno> alumnos = new ArrayList<>();
 
     // Método para listar todos los alumnos
