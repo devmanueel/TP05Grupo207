@@ -26,7 +26,7 @@
             
             <div class="col-sm-12">
                 <label for="nombre" class="form-label">DNI: </label>
-                <input type="text" class="form-control" id="dni" data-th-field="*{dni} " required="required">
+                <input type="text" class="form-control" id="dni" data-th-field="*{dni} " data-th-readonly="${edicion}" required="required" >
             </div>
             
             <div class="col-sm-12">
@@ -41,6 +41,10 @@
             	
         </div>
         <div class="col ">
+        	<div class="col-sm-12">
+                <label for="nombre" class="form-label">Domicilio: </label>
+                <input type="text" class="form-control" id="domicilio" data-th-field="*{domicilio}" required="required">
+            </div>
             <div class="col-sm-6">
                 <label for="nombre" class="form-label">Email: </label>
                 <input type="email" class="form-control" id="email" data-th-field="*{email}" required="required">
@@ -63,6 +67,14 @@
                 </select>
                
             </div>  
+            
+            <div  class="row mb-3 justify-content-center col-3">
+				<label for="cantidad" class="form-label">ESTADO: </label> <select
+					class="form-select " data-th-field="*{estado}" required="required">
+					<option data-th-value="true" selected>Activo</option>
+					<option data-th-value="false">Inactivo</option>
+				</select>
+			</div>
             
          </div>  
               <div class="d-flex justify-content-center align-items-Center">

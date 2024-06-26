@@ -45,9 +45,12 @@
                 <div>
                     <p class="d-inline me-2">Telefono:</p><p class="card-text d-inline" data-th-text="${a.telefono}"></p>
                 </div>
+                <div>
+                    <p class="d-inline me-2">Domicilio:</p><p class="card-text d-inline" data-th-text="${a.domicilio}"></p>
+                </div>
 				<!-- Botones Card-->
-			    <a data-th-href="@{/alumno/borrar/}+${a.LU}" class="btn btn-danger" role="button">Borrar</a>					
-				<a data-th-href="@{/alumno/modificar/}+${a.LU}" class="btn btn-warning" role="button">Modificar</a>
+			    <a data-th-href="@{/alumno/borrar/}+${a.dni}" class="btn btn-danger" role="button">Borrar</a>					
+				<a data-th-href="@{/alumno/modificar/}+${a.dni}" class="btn btn-warning" role="button">Modificar</a>
 			  </div>	
 		  </div>
 		</div>	
